@@ -52,7 +52,8 @@ body * {
   margin: auto vai centralizar o container no meio
   A borda ajuda a entender a dimensão da caixa, muito bom usar no inicio e tirar depois
   */
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0px 24px;
 }
