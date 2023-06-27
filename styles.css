@@ -80,14 +80,6 @@ para centralizar a imagem inline é possivel usar o elemento pai para isso:
   border: 2px solid white;
 }
 
-.light-border {
-  border: 2px red;
-}
-
-.night-border {
-  border: 2px white;
-}
-
 #profile p {
   font-weight: 500;
   line-height: 24px;
@@ -114,11 +106,16 @@ para centralizar a imagem inline é possivel usar o elemento pai para isso:
   transform: translateY(-50%);
   left: 0;
   top: 50%;
+
+  animation: slide-back 0.3s
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.3s forwards; /* com a regra forwards vai fazer a animação e manter a posição mantidas no slide-in */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color-hover);
 }
 
 #switch span{
@@ -199,5 +196,26 @@ footer{
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animações do toggle*/
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
